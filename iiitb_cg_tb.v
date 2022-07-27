@@ -1,4 +1,4 @@
-module clock_delay_tb();
+module iiitb_cg_tb();
 	reg d,en,clk;
 	wire q,gclk;
 	clock_delay test(d,en,clk,q,gclk);
