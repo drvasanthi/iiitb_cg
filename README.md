@@ -1,5 +1,8 @@
 # iiitb-cg - Clock Gating
-This project simulates the designed Bandgap Reference circuit to determine its performance characterisitics pre-simulation and post-simulation.
+  The project design of an Clock Gating using SKY 130nm technology node. 
+  
+## Description
+  In current VLSI design, the power dissipation is the most important parameter that signifies the need of low power circuits. The clock gating logic is used in many synchronous circuits for reducing dynamic power dissipation, by removing the clock signal when the circuit is not in use. 
 
 Note: The circuit Design yet to be modified to improve the performance.
 
