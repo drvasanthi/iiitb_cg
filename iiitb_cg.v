@@ -1,4 +1,4 @@
-module clock_delay(d,en,clk,gclk,q);
+module iiitb_cg(d,en,clk,gclk,q);
 input d,en,clk;
 output q, gclk;
 reg q=0;
