@@ -17,4 +17,16 @@ sudo apt-get update
 sudo apt-get install iverilog gtkwave
  ```
 ## Pre-Simulation
-To clone the Repository, enter the following commands in your terminal.
+To clone the Repository, type the following commands in your terminal.
+```html
+git clone https://github.com/drvasanthi/iiitb_cg
+
+cd /home/vasanthidr11/Desktop/iiitb_cg/
+
+iverilog iiitb_cg.v iiitb_cg_tb.v
+
+./a.out
+VCD info: dumpfile test.vcd opened for output.
+
+gtkwave test.vcd
+
