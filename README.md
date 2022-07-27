@@ -8,8 +8,11 @@ Note: The circuit Design yet to be modified to improve the performance.
   
  In the context menu, right click on an empty space, you’ll see the option of ‘Open in Terminal’
  
- (htttp://www.github.com)
- 
- Type the following command
+  Type the following command
  ```html
+sudo add-apt-repository ppa:team-electronics/ppa
+
+sudo apt-get update
+
+sudo apt-get install iverilog gtkwave
  ```
