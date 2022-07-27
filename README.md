@@ -3,7 +3,6 @@ This project simulates the designed Bandgap Reference circuit to determine its p
 
 Note: The circuit Design yet to be modified to improve the performance.
 
-{: .gitlab-orange}
 ## Icarus Verilog (iverilog) Installation on Ubuntu
   //_Icarus Verilog is an open-source EDA tool for implementing verilog hardware description language_//
   
