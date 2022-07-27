@@ -1,1 +1,1 @@
-# IIITB_CG_IP
+# iiitb-cg - Clock Gating
