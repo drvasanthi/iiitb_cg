@@ -16,3 +16,5 @@ sudo apt-get update
 
 sudo apt-get install iverilog gtkwave
  ```
+## Pre-Simulation
+To clone the Repository, enter the following commands in your terminal.
