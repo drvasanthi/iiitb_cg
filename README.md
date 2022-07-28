@@ -38,4 +38,13 @@ $ gtkwave test.vcd
 ```
 ![image](https://user-images.githubusercontent.com/67214592/181414148-5b581b51-5165-4e3f-99f7-00138c69e804.png)
 
+##Contributors
+  * Vasanthi D R
+  * Kunal Ghosh
 
+##Acknowledgement
+  * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
+
+##Contact Information
+  * Vasanthi D R, PhD Scholar, International Institute of Information Technology, Bangalore vasanthidr11@gmail.com
+  * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com
