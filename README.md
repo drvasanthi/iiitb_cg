@@ -44,12 +44,23 @@ $ gtkwave test.vcd
 
 
 ##Contributors
+
   * Vasanthi D R
+  * Dantu Nandini Devi
   * Kunal Ghosh
+  * Madhav Rao
+  * Nanditha Rao
 
 ##Acknowledgement
+  
   * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
+  * Madhav Rao, Professor, IIIT-Bangalore.
+  * Nanditha Rao, Professor, IIIT-Bangalore.
 
 ##Contact Information
+
   * Vasanthi D R, PhD Scholar, International Institute of Information Technology, Bangalore vasanthidr11@gmail.com
+  * Dantu Nandini Devi, MS Student, International Institute of Information Technology, Bangalore nandini.dantu@gmail.com
   * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com
+  * Madhav Rao, Professor, IIIT-Bangalore. mr@iiitb.ac.in
+  * Nanditha Rao, Professor, IIIT-Bangalore. nanditha.rao@iiitb.ac.in
