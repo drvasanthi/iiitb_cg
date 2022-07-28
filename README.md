@@ -36,5 +36,6 @@ $VCD info: dumpfile test.vcd opened for output.
 
 $ gtkwave test.vcd
 ```
+![image](https://user-images.githubusercontent.com/67214592/181414148-5b581b51-5165-4e3f-99f7-00138c69e804.png)
 
 
