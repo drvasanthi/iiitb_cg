@@ -36,7 +36,12 @@ $VCD info: dumpfile test.vcd opened for output.
 
 $ gtkwave test.vcd
 ```
-![image](https://user-images.githubusercontent.com/67214592/181414148-5b581b51-5165-4e3f-99f7-00138c69e804.png)
+![image](https://user-images.githubusercontent.com/67214592/181414773-8ba123ca-ea46-4fc7-97a2-5a7f168a69ee.png)
+
+![image](https://user-images.githubusercontent.com/67214592/181414854-920be29d-4828-49d9-8f6a-2e256a4be945.png)
+
+![image](https://user-images.githubusercontent.com/67214592/181414927-11260dd3-b2ab-4edf-88fc-3621c7e3ffe2.png)
+
 
 ##Contributors
   * Vasanthi D R
