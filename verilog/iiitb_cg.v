@@ -1,4 +1,4 @@
-module icg (in,clk,d0,d1,q0,q1,cgclk,q_l);
+module iiitb_icg (in,clk,d0,d1,q0,q1,cgclk,q_l);
 input in,d0,d1;
 input clk;
 output q0,q1,cgclk, q_l;
