@@ -27,3 +27,13 @@ q1 <=d1;
 end
 
 endmodule
+
+module dff(clock,d,q);
+input clock, d;
+output q;
+reg q=0;
+always @(posedge clock)
+begin
+q=d;
+end
+endmodule
