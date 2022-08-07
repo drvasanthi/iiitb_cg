@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module iiitb_icg_tb();
     reg in, clk, d0, d1;
     wire q0, q1,cgclk, q_l;
@@ -17,10 +19,10 @@ module iiitb_icg_tb();
 	#200 $finish;
 	end
 	
-	always #8 in<=~in;
+	always #50 in<=~in;
 	//always #5 en<=~en;
-	always #5 d0<=~d0;
-	always #7 d1<=~d1;
-	always #3 clk=~clk;
+	always #120 d0<=~d0;
+	always #150 d1<=~d1;
+	always #100 clk=~clk;
 	
 endmodule
