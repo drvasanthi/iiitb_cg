@@ -1,5 +1,5 @@
 # iiitb-cg - Clock Gating
-  The project design of an Clock Gating using SKY 130nm technology node. 
+  The project design is based on Clock Gating using SKY 130nm technology node. 
   
 ## Description
   In current VLSI design, the power dissipation is the most important parameter that signifies the need of low power circuits. The clock gating logic is used in many synchronous circuits for reducing dynamic power dissipation, by removing the clock signal when the circuit is not in use. 
