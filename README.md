@@ -115,5 +115,10 @@ yosys> show
   
  ## References
  
- [1] Saurabh Kshirsagar, Dr. M B Mali, “A Review of Clock Gating Techniques in Low Power Applications”, International Journal of Innovative Research in Science, Engineering and Technology (An ISO 3297: 2007 Certified Organization) Vol. 4, Issue 6, June 2015, ISSN (Online): 2319-8753, ISSN (Print): 2347-6710.
- [2] Yassine Attaqui; Mohamed Chentquf; Zine el Abidine Alaqui Ismaili; "Clock Gating Efficiency and Impact on Power Otimization during Synthesis Flow", 2021 INTERNATIONAL CONFERENCE ON MICROELECTRONICS (ICM).
+ [1] VLSI System Design: https://www.vlsisystemdesign.com/
+ 
+ [2] SkyWater SKY130 PDK: https://skywater-pdk.readthedocs.io/en/main/contents/libraries/foundry-provided.html
+ 
+ [3] RTL Design using Verilog with Sky130 Technology: https://www.vsdiat.com/dashboard
+ 
+ [4] Saurabh Kshirsagar, Dr. M B Mali, “A Review of Clock Gating Techniques in Low Power Applications”, International Journal of Innovative Research in Science, Engineering and Technology (An ISO 3297: 2007 Certified Organization) Vol. 4, Issue 6, June 2015, ISSN (Online): 2319-8753, ISSN (Print): 2347-6710.
