@@ -11,29 +11,14 @@ wire n1,n2,n3,n4,n5,clk_n,q_l;
 wire en;
 
 dff dff1 (clk,in,n1);
-
-assign n2 = ~n1;
-//not g1 (n2,n1);
-
-assign n3 = ~n2;
-//not g2 (n3,n2);
-
-assign n4 = ~(n1 & n3);
-//nand g3 (n4,n1,n3);
-
-assign n5 = (n3 & n2);
-//and g4 (n5,n3,n2);
-
-assign en = n4 | n5;
-//or g5 (en,n4,n5);
-
-assign clk_n = ~ clk;
-//not (clk_n, clk);
-
+not g1 (n2,n1);
+not g2 (n3,n2);
+nand g3 (n4,n1,n3);
+and g4 (n5,n3,n2);
+or g5 (en,n4,n5);
+not (clk_n, clk);
 dff dff2 (clk_n,en,q_l);
-
-assign cgclk = clk & q_l;
-//and (cgclk,clk,q_l);
+and (cgclk,clk,q_l);
 
 always@(posedge cgclk)
 begin
