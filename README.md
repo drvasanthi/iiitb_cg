@@ -91,7 +91,7 @@ yosys> show
 
 ## GLS - Gate Level Simulation
 
-##Contributors
+## Contributors
 
   * Vasanthi D R
   * Dantu Nandini Devi
@@ -99,13 +99,13 @@ yosys> show
   * Madhav Rao
   * Nanditha Rao
 
-##Acknowledgement
+## Acknowledgement
   
   * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
   * Madhav Rao, Professor, IIIT-Bangalore.
   * Nanditha Rao, Professor, IIIT-Bangalore.
 
-##Contact Information
+## Contact Information
 
   * Vasanthi D R, PhD Scholar, International Institute of Information Technology, Bangalore vasanthidr11@gmail.com
   * Dantu Nandini Devi, MS Student, International Institute of Information Technology, Bangalore nandini.dantu@gmail.com
