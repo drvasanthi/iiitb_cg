@@ -4,6 +4,6 @@ output q;
 reg q=0;
 always @(posedge clock)
 begin
-q=d;
+q<=d;
 end
 endmodule
