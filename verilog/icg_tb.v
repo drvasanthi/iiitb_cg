@@ -12,9 +12,9 @@ module icg_tb();
     clk = 0;
     //en=0;
     
-	 //   $dumpfile("test1.vcd");
-	//$dumpvars(1);
-	//#200 $finish;
+	 $dumpfile("test1.vcd");
+	    $dumpvars(0,test1);
+	#100 $finish;
 	end
 	
 	always #1 in<=~in;
