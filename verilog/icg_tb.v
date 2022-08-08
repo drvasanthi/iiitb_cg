@@ -12,7 +12,7 @@ module icg_tb();
     clk = 0;
     //en=0;
     
-    $dumpfile("test.vcd");
+	    $dumpfile("test1.vcd");
 	$dumpvars(1);
 	#200 $finish;
 	end
