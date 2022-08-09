@@ -1,10 +1,9 @@
-# iiitb-cg - Clock Gating
-  The project design is based on Clock Gating using SKY 130nm technology node. 
+# iiitb-cg - Integrated Clock Gating (ICG)
+  The project design is based on Integrated Clock Gating using SKY 130nm technology node. 
   
-## Description
-  In current VLSI design, the power dissipation is the most important parameter that signifies the need of low power circuits. The clock gating logic is used in many synchronous circuits for reducing dynamic power dissipation, by removing the clock signal when the circuit is not in use. 
+## **Description**
 
-Note: The circuit Design yet to be modified to improve the performance.
+  In current VLSI design, the power dissipation is the most important parameter that signifies the need of low power circuits. In most of the ICs clock consumes 30-40 % of total power. So the integrated clock gating logic is used in many synchronous circuits for reducing dynamic power dissipation, by removing the clock signal when the circuit is not in use. 
 
 **Block Diagram**
 
@@ -19,10 +18,8 @@ Note: The circuit Design yet to be modified to improve the performance.
   
  In the context menu, right click on an empty space, you’ll see the option of ‘Open in Terminal’
  
-  * Type the following command to install `iverilog`
+  * Type the following command to install `iverilog & gtkwave`
  ```
-$ sudo add-apt-repository ppa:team-electronics/ppa
-
 $ sudo apt-get update
 
 $ sudo apt-get install iverilog gtkwave
@@ -30,6 +27,8 @@ $ sudo apt-get install iverilog gtkwave
  
   * Type the following command to install `yosys`
  ```
+ $ git clone https://github.com/YosysHQ/yosys.git
+ 
  $ sudo apt install make
  
  $ sudo apt-get install build-essential clang bison flex \
@@ -41,7 +40,7 @@ $ sudo apt-get install iverilog gtkwave
 
  ```
  
-## RTL-Simulation
+## ICG - RTL-Simulation 
 To clone the Repository, type the following commands in your terminal.
 ```html
 $ git clone https://github.com/drvasanthi/iiitb_cg
