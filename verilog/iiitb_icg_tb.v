@@ -2,9 +2,9 @@
 
 module iiitb_icg_tb();
     reg in, clk, d0, d1;
-    wire q0, q1,cgclk, q_l;
+    wire q0, q1;
     
-    iiitb_icg test (.in(in), .clk(clk), .d0(d0), .d1(d1), .q0(q0), .q1(q1),.cgclk(cgclk), .q_l(q_l));
+    iiitb_icg test (.in(in), .clk(clk), .d0(d0), .d1(d1), .q0(q0), .q1(q1));
     initial 
     begin
     
@@ -19,10 +19,10 @@ module iiitb_icg_tb();
 	#200 $finish;
 	end
 	
-	always #50 in<=~in;
+	always #20 in<=~in;
 	//always #5 en<=~en;
-	always #120 d0<=~d0;
-	always #150 d1<=~d1;
-	always #100 clk=~clk;
+	always #40 d0<=~d0;
+	always #50 d1<=~d1;
+	always #30 clk=~clk;
 	
 endmodule
