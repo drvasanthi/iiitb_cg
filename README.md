@@ -5,11 +5,12 @@
 
   In current VLSI design, the power dissipation is the most important parameter that signifies the need of low power circuits. In most of the ICs clock consumes 30-40 % of total power. So the integrated clock gating logic is used in many synchronous circuits for reducing dynamic power dissipation, by removing the clock signal when the circuit is not in use. 
 
-**Block Diagram**
+**Block Diagram and Circuit Diagram**
 
 ![blockdiagram](https://user-images.githubusercontent.com/67214592/183288720-9af6827a-cbfa-4f47-8b24-2172c4f7ea01.PNG)
 
-**Circuit Diagram**
+Clock gating is a prevailing technique for lowering clock power is done with help of clock enable signal by powering off the module by a clock. Clock gating functionally requires only an AND gate. The former using of AND gate with clock, the high EN edge may arrive at any time and may not coincide with a clock edge. In that case the output of the AND gate will be a logic ‘1’ for less time than the clock’s duty cycle, in turn end up with a glitch in the clock signal.
+To avoid this, a special kind of clock gating cells are used, that synchronizes the EN with a clock edge. These are called as integrated clock gating cells or ICG. In the design gclk is available only when the latch output is high and gclk is held low when en is low as shown in the circuit diagram. Therefore, target the design very close by meeting the PPA (Power, Performance, Area).
 
 ![circuitdiagram](https://user-images.githubusercontent.com/67214592/183288729-cf1af368-8624-45e7-b864-e66ad3e6ef99.PNG)
 
@@ -41,54 +42,97 @@ $ sudo apt-get install iverilog gtkwave
  ```
  
 ## ICG - RTL-Simulation 
-To clone the Repository, type the following commands in your terminal.
+
+1. To clone the Repository, type the following commands in your terminal.
+
 ```html
 $ git clone https://github.com/drvasanthi/iiitb_cg
 
 $ cd /home/vasanthidr11/Desktop/iiitb_cg/
-
-$ iverilog iiitb_cg.v iiitb_cg_tb.v
 ```
-Run the file using the following commands
+
+2. Details information of files
+
+![image](https://user-images.githubusercontent.com/67214592/183938100-3ac9896b-b7f5-49f5-8caf-f5d8e87e89e7.png)
+
+![image](https://user-images.githubusercontent.com/67214592/183938162-c38446f1-5079-4915-91e1-ac469c89cc24.png)
+
+![image](https://user-images.githubusercontent.com/67214592/183938219-de9c115a-8a6e-4159-acd7-12cfd6f6832c.png)
+
+3. To Run the .v file, type the following commands
+
 ```html
+$ iverilog iiitb_icg.v iiitb_icg_tb.v
 
 $ ./a.out
-$VCD info: dumpfile test.vcd opened for output.
+$VCD info: dumpfile iiitb_icg_tb.vcd opened for output.
 
-$ gtkwave test.vcd
+$ gtkwave iiitb_icg_tb
 ```
-![image](https://user-images.githubusercontent.com/67214592/181414773-8ba123ca-ea46-4fc7-97a2-5a7f168a69ee.png)
+![RTLicg](https://user-images.githubusercontent.com/67214592/183932716-48dd485e-6e12-4bf6-a658-955cc8b094da.PNG)
 
-![image](https://user-images.githubusercontent.com/67214592/181414854-920be29d-4828-49d9-8f6a-2e256a4be945.png)
+## ICG - Synthesis
 
-![image](https://user-images.githubusercontent.com/67214592/181414927-11260dd3-b2ab-4edf-88fc-3621c7e3ffe2.png)
-
-## Synthesis
-
-Invoke the yosys using following commands
+1. Invoke the yosys using following commands
 
 ![image](https://user-images.githubusercontent.com/67214592/183289143-1ecf0702-ef0a-4187-8c6d-531cb8866ba7.png)
 
 ```
+// reads the library file from sky130//
+
 yosys> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-
-yosys> read_verilog iiitb_icg.v dff.v
-
-yosys> synth -top iiitb_icg
-
-yosys> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-
-yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-
-yosys> flatten
-
-yosys> show
-
 ```
 
-![icg_synth](https://user-images.githubusercontent.com/67214592/183289303-634f1746-c0d0-4cef-a0e3-b7407b738eda.PNG)
+```
+// reads the verilog files//
+yosys> read_verilog iiitb_icg.v dff.v
+```
+
+```
+//synthesize the top module of verilog file//
+yosys> synth -top iiitb_icg
+```
+
+```
+//Generates netlist//
+yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+```
+//Simplified netlist//
+yosys> flatten
+```
+
+```
+//Displays the Netlist circuit//
+yosys> show
+```
+
+**Synthesized Circuit**
+
+![icg_synth](https://user-images.githubusercontent.com/67214592/183945532-d69681e1-295b-4e35-b741-efc7123ddf2c.PNG)
+
+```
+//Writing Netlist//
+yosys> write_verilog -noattr iiitb_icg_netlist.v
+```
+
+```
+//Simplified Netlist - As code dwells with additional switch//
+yosys> !gvim iiitb_icg_netlist.v
+```
+
+![image](https://user-images.githubusercontent.com/67214592/183947436-a39f072b-138f-4f90-9207-8b4148652cb8.png)
 
 ## GLS - Gate Level Simulation
+
+Commands to Invoke GLS
+
+![image](https://user-images.githubusercontent.com/67214592/183949713-4e1e1306-74cf-4981-a396-a9c755b49120.png)
+
+**Gate Level Simulation**
+
+![glsicg](https://user-images.githubusercontent.com/67214592/183949929-0713fee6-cd95-44b2-b029-dab0a2a2c498.PNG)
 
 ## Contributors
 
