@@ -101,6 +101,8 @@ yosys> synth -top iiitb_icg
 yosys> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
 ```
+
+```
 //Generates netlist//
 
 yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
