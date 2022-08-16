@@ -128,7 +128,11 @@ yosys> !gvim iiitb_icg_netlist.v
 
 Commands to Invoke GLS
 
-![image](https://user-images.githubusercontent.com/67214592/183949713-4e1e1306-74cf-4981-a396-a9c755b49120.png)
+```
+$ iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 ../verilog_model/primitives.v ../verilog_model/sky130_fd_sc_hd.v iiitb_icg_synth.v iiitb_icg_tb.v
+$ ./a.out
+$ gtkwave iiitb.icg_tb.v
+```
 
 **Gate Level Simulation**
 
