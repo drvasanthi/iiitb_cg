@@ -94,6 +94,10 @@ yosys> synth -top iiitb_icg
 ```
 
 ```
+//map the FF library file//
+yosys> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+```
 //Generates netlist//
 yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
