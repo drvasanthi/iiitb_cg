@@ -41,7 +41,7 @@ $ sudo apt-get install iverilog gtkwave
 
  ```
  
-## ICG - RTL-Simulation 
+## Pre-Synthesis [ICG - RTL-Simulation] 
 
 1. To clone the Repository, type the following commands in your terminal.
 
@@ -106,6 +106,7 @@ yosys> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 //Generates netlist//
 
 yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+yosys> stat
 ```
 
 ```
@@ -136,7 +137,7 @@ yosys> write_verilog -noattr iiitb_icg_netlist.v
 yosys> !gvim iiitb_icg_netlist.v
 ```
 
-## GLS - Gate Level Simulation
+## Post-Synthesis [GLS - Gate Level Simulation]
 
 Commands to Invoke GLS
 
