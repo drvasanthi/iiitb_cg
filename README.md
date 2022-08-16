@@ -85,30 +85,36 @@ yosys> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
 ```
 // reads the verilog files//
+
 yosys> read_verilog iiitb_icg.v dff.v
 ```
 
 ```
 //synthesize the top module of verilog file//  
+
 yosys> synth -top iiitb_icg
 ```
 
 ```
 //map the FF library file//
+
 yosys> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
 ```
 //Generates netlist//
+
 yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 
 ```
 //Simplified netlist//
+
 yosys> flatten
 ```
 
 ```
 //Displays the Netlist circuit//
+
 yosys> show
 ```
 
@@ -118,11 +124,13 @@ yosys> show
 
 ```
 //Writing Netlist//
+
 yosys> write_verilog -noattr iiitb_icg_netlist.v
 ```
 
 ```
 //Simplified Netlist - As code dwells with additional switch//
+
 yosys> !gvim iiitb_icg_netlist.v
 ```
 
