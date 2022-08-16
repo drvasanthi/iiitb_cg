@@ -89,7 +89,7 @@ yosys> read_verilog iiitb_icg.v dff.v
 ```
 
 ```
-//synthesize the top module of verilog file//
+//synthesize the top module of verilog file//  
 yosys> synth -top iiitb_icg
 ```
 
