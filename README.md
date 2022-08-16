@@ -122,8 +122,6 @@ yosys> write_verilog -noattr iiitb_icg_netlist.v
 yosys> !gvim iiitb_icg_netlist.v
 ```
 
-![image](https://user-images.githubusercontent.com/67214592/183947436-a39f072b-138f-4f90-9207-8b4148652cb8.png)
-
 ## GLS - Gate Level Simulation
 
 Commands to Invoke GLS
