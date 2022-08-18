@@ -41,7 +41,7 @@ $ sudo apt-get install iverilog gtkwave
 
  ```
  
-## Pre-Synthesis [ICG - RTL-Simulation] 
+## RTL Pre-Simulation
 
 1. To clone the Repository, type the following commands in your terminal.
 
@@ -138,7 +138,7 @@ yosys> stat
 yosys> !gvim iiitb_icg_netlist.v
 ```
 
-## Post-Synthesis [GLS - Gate Level Simulation]
+## GLS Post-Simulation
 
 Commands to Invoke GLS
 
