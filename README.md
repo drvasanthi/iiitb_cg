@@ -129,6 +129,7 @@ yosys> show
 //Writing Netlist//
 
 yosys> write_verilog -noattr iiitb_icg_netlist.v
+yosys> stat
 ```
 
 ```
