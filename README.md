@@ -37,9 +37,9 @@ To avoid this, a special kind of clock gating cells are used, that synchronizes 
 
 ![circuitdiagram](https://user-images.githubusercontent.com/67214592/183288729-cf1af368-8624-45e7-b864-e66ad3e6ef99.PNG)
 
-## **RTL Design and Synthesis**
+## **II. RTL Design and Synthesis**
 
-### **Icarus Verilog (iverilog) & Yosys Installation on Ubuntu**
+### **1. Icarus Verilog (iverilog) & Yosys Installation on Ubuntu**
   //_Icarus Verilog is an open-source EDA tool for implementing verilog hardware description language_//
   
  In the context menu, right click on an empty space, you’ll see the option of ‘Open in Terminal’
