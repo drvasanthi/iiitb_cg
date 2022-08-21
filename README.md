@@ -4,12 +4,12 @@
 
 ## TABLE OF CONTENT
 
-1. [**Introduction to Integrated Clock Gating**](https://github.com/drvasanthi/iiitb_cg/blob/main/README.md#introduction)  
-2. [**RTL Design and Synthesis**]  
-	i. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu]  
-	ii. [Pre-Simulation]  
-	iii. [Post-simulation]  
-3. [**Physical Design from Netlist to GDSII**]  
+I. [**Introduction to Integrated Clock Gating**](https://github.com/drvasanthi/iiitb_cg/blob/main/README.md#introduction)  
+II. [**RTL Design and Synthesis**]  
+	1. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu]  
+	2. [Pre-Simulation]  
+	3. [Post-simulation]  
+III. [**Physical Design from Netlist to GDSII**]  
 	i. [Synthesis]  
 	ii. [Floorplan]  
 	iii. [Placement]  
@@ -22,7 +22,7 @@
 
 
   
-## **Introduction**
+## **I. Introduction**
 
  The project design is based on Integrated Clock Gating using SKY 130nm technology node. 
 
@@ -37,7 +37,9 @@ To avoid this, a special kind of clock gating cells are used, that synchronizes 
 
 ![circuitdiagram](https://user-images.githubusercontent.com/67214592/183288729-cf1af368-8624-45e7-b864-e66ad3e6ef99.PNG)
 
-## Icarus Verilog (iverilog) & Yosys Installation on Ubuntu
+## **RTL Design and Synthesis**
+
+### **Icarus Verilog (iverilog) & Yosys Installation on Ubuntu**
   //_Icarus Verilog is an open-source EDA tool for implementing verilog hardware description language_//
   
  In the context menu, right click on an empty space, you’ll see the option of ‘Open in Terminal’
