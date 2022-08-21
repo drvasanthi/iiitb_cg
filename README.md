@@ -4,7 +4,7 @@
 
 ## TABLE OF CONTENT
 
-1. [**Introduction to Integrated Clock Gating**]  
+1. [**Introduction to Integrated Clock Gating**](https://github.com/drvasanthi/iiitb_cg/blob/main/README.md#introduction)  
 2. [**RTL Design and Synthesis**]  
 	i. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu]  
 	ii. [Pre-Simulation]  
