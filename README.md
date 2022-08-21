@@ -1,7 +1,30 @@
-# iiitb-cg - Integrated Clock Gating (ICG)
-  The project design is based on Integrated Clock Gating using SKY 130nm technology node. 
+<h1 align="center">RTL to GDSII using SKY130nm Technology node</h1>
+
+<h1 align="center">Integrated Clock Gating (ICG) Design</h1>
+
+## TABLE OF CONTENT
+
+1. [**Introduction to Integrated Clock Gating**]  
+2. [**RTL Design and Synthesis**]  
+	i. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu]  
+	ii. [Pre-Simulation]  
+	iii. [Post-simulation]  
+3. [**Physical Design from Netlist to GDSII**]  
+	i. [Synthesis]  
+	ii. [Floorplan]  
+	iii. [Placement]  
+	iv. [CTS]  
+	v. [Routing]  
+[**Contributers**]  
+[**Acknowledgment**]  
+[**Contact Information**]  
+[**Reference**]  
+
+
   
-## **Description**
+## **Introduction**
+
+ The project design is based on Integrated Clock Gating using SKY 130nm technology node. 
 
   In current VLSI design, the power dissipation is the most important parameter that signifies the need of low power circuits. In most of the ICs clock consumes 30-40 % of total power. So the integrated clock gating logic is used in many synchronous circuits for reducing dynamic power dissipation, by removing the clock signal when the circuit is not in use. 
 
