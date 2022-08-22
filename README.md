@@ -5,20 +5,21 @@
 ## TABLE OF CONTENT
 
 I. [**Introduction to Integrated Clock Gating**](https://github.com/drvasanthi/iiitb_cg/blob/main/README.md#introduction)  
-II. [**RTL Design and Synthesis**]  
-	1. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu]  
-	2. [Pre-Simulation]  
-	3. [Post-simulation]  
+II. [**RTL Design and Synthesis**](https://github.com/drvasanthi/iiitb_cg#ii-rtl-design-and-synthesis)
+	1. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu](https://github.com/drvasanthi/iiitb_cg#1-icarus-verilog-iverilog--yosys-installation-on-ubuntu)
+	2. [RTL Pre-Simulation](https://github.com/drvasanthi/iiitb_cg#rtl-pre-simulation)
+	3. [Synthesis](https://github.com/drvasanthi/iiitb_cg#icg---synthesis)
+	3. [GLS Post-simulation](https://github.com/drvasanthi/iiitb_cg#gls-post-simulation)
 III. [**Physical Design from Netlist to GDSII**]  
 	i. [Synthesis]  
 	ii. [Floorplan]  
 	iii. [Placement]  
 	iv. [CTS]  
 	v. [Routing]  
-[**Contributers**]  
-[**Acknowledgment**]  
-[**Contact Information**]  
-[**Reference**]  
+[**Contributers**](https://github.com/drvasanthi/iiitb_cg#contributors)
+[**Acknowledgment**](https://github.com/drvasanthi/iiitb_cg#acknowledgement)
+[**Contact Information**](https://github.com/drvasanthi/iiitb_cg#contact-information)
+[**Reference**](https://github.com/drvasanthi/iiitb_cg#references)
 
 
   
@@ -177,6 +178,9 @@ $ gtkwave iiitb.icg_tb.v
 
 ![glsicg](https://user-images.githubusercontent.com/67214592/183949929-0713fee6-cd95-44b2-b029-dab0a2a2c498.PNG)
 
+## **III. Physical Design from Netlist to GDSII**
+
+
 ## Contributors
 
   * Vasanthi D R
@@ -188,6 +192,7 @@ $ gtkwave iiitb.icg_tb.v
 ## Acknowledgement
   
   * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
+  * Nickson Jose, VLSI Engineer, VSD Corp. Pvt. Ltd.
   * Madhav Rao, Professor, IIIT-Bangalore.
   * Nanditha Rao, Professor, IIIT-Bangalore.
 
@@ -207,4 +212,7 @@ $ gtkwave iiitb.icg_tb.v
  
  [3] RTL Design using Verilog with Sky130 Technology: https://www.vsdiat.com/dashboard
  
- [4] Saurabh Kshirsagar, Dr. M B Mali, “A Review of Clock Gating Techniques in Low Power Applications”, International Journal of Innovative Research in Science, Engineering and Technology (An ISO 3297: 2007 Certified Organization) Vol. 4, Issue 6, June 2015, ISSN (Online): 2319-8753, ISSN (Print): 2347-6710.
+ [4] Openlane - SKY130: https://github.com/The-OpenROAD-Project/OpenLane
+ 
+ [5] Magic Installation: https://github.com/RTimothyEdwards/magic
+ 
