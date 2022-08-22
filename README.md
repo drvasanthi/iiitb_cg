@@ -11,11 +11,12 @@ II. [**RTL Design and Synthesis**](https://github.com/drvasanthi/iiitb_cg#ii-rtl
 	3. [Synthesis](https://github.com/drvasanthi/iiitb_cg#icg---synthesis)  
 	3. [GLS Post-simulation](https://github.com/drvasanthi/iiitb_cg#gls-post-simulation)  
 III. [**Physical Design from Netlist to GDSII**](https://github.com/drvasanthi/iiitb_cg#iii-physical-design-from-netlist-to-gdsii)  
-	1. [Synthesis]  
-	2. [Floorplan]  
-	3. [Placement]  
-	4. [CTS]  
-	5. [Routing]  
+	1. Invoke OpenLane  
+	2. [Synthesis]    
+	3. [Floorplan]  
+	4. [Placement]  
+	5. [CTS]  
+	6. [Routing]  
 [**Contributers**](https://github.com/drvasanthi/iiitb_cg#contributors)  
 [**Acknowledgment**](https://github.com/drvasanthi/iiitb_cg#acknowledgement)  
 [**Contact Information**](https://github.com/drvasanthi/iiitb_cg#contact-information)  
@@ -178,6 +179,28 @@ $ gtkwave iiitb.icg_tb.v
 ![glsicg](https://user-images.githubusercontent.com/67214592/183949929-0713fee6-cd95-44b2-b029-dab0a2a2c498.PNG)
 
 ## **III. Physical Design from Netlist to GDSII**
+
+### **1. Invoke Openlane**  
+
+```
+$ git clone https://github.com/The-OpenROAD-Project/OpenLane.git
+```
+
+```
+Pre-request
+* GNU Make
+* Python 3.6+ with pip and virtualenv
+* Git 2.22+
+* Docker 19.03.12+
+```
+
+```
+cd OpenLane/
+    make
+    make test
+```
+
+### **2. Synthesis**
 
 
 ## Contributors
