@@ -4,18 +4,18 @@
 
 ## TABLE OF CONTENT
 
-I. [**Introduction to Integrated Clock Gating**](https://github.com/drvasanthi/iiitb_cg/blob/main/README.md#introduction)  
-II. [**RTL Design and Synthesis**](https://github.com/drvasanthi/iiitb_cg#ii-rtl-design-and-synthesis)
-	1. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu](https://github.com/drvasanthi/iiitb_cg#1-icarus-verilog-iverilog--yosys-installation-on-ubuntu)
-	2. [RTL Pre-Simulation](https://github.com/drvasanthi/iiitb_cg#rtl-pre-simulation)
-	3. [Synthesis](https://github.com/drvasanthi/iiitb_cg#icg---synthesis)
-	3. [GLS Post-simulation](https://github.com/drvasanthi/iiitb_cg#gls-post-simulation)
+I. [**Introduction to Integrated Clock Gating**](https://github.com/drvasanthi/iiitb_cg/blob/main/README.md#introduction)    
+II. [**RTL Design and Synthesis**](https://github.com/drvasanthi/iiitb_cg#ii-rtl-design-and-synthesis)  
+	1. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu](https://github.com/drvasanthi/iiitb_cg#1-icarus-verilog-iverilog--yosys-installation-on-ubuntu)  
+	2. [RTL Pre-Simulation](https://github.com/drvasanthi/iiitb_cg#rtl-pre-simulation)  
+	3. [Synthesis](https://github.com/drvasanthi/iiitb_cg#icg---synthesis)  
+	3. [GLS Post-simulation](https://github.com/drvasanthi/iiitb_cg#gls-post-simulation)  
 III. [**Physical Design from Netlist to GDSII**]  
-	i. [Synthesis]  
-	ii. [Floorplan]  
-	iii. [Placement]  
-	iv. [CTS]  
-	v. [Routing]  
+	1. [Synthesis]  
+	2. [Floorplan]  
+	3. [Placement]  
+	4. [CTS]  
+	5. [Routing]  
 [**Contributers**](https://github.com/drvasanthi/iiitb_cg#contributors)
 [**Acknowledgment**](https://github.com/drvasanthi/iiitb_cg#acknowledgement)
 [**Contact Information**](https://github.com/drvasanthi/iiitb_cg#contact-information)
