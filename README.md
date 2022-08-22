@@ -10,17 +10,16 @@ II. [**RTL Design and Synthesis**](https://github.com/drvasanthi/iiitb_cg#ii-rtl
 	2. [RTL Pre-Simulation](https://github.com/drvasanthi/iiitb_cg#rtl-pre-simulation)  
 	3. [Synthesis](https://github.com/drvasanthi/iiitb_cg#icg---synthesis)  
 	3. [GLS Post-simulation](https://github.com/drvasanthi/iiitb_cg#gls-post-simulation)  
-III. [**Physical Design from Netlist to GDSII**]  
+III. [**Physical Design from Netlist to GDSII**](https://github.com/drvasanthi/iiitb_cg#iii-physical-design-from-netlist-to-gdsii)  
 	1. [Synthesis]  
 	2. [Floorplan]  
 	3. [Placement]  
 	4. [CTS]  
 	5. [Routing]  
-[**Contributers**](https://github.com/drvasanthi/iiitb_cg#contributors)
-[**Acknowledgment**](https://github.com/drvasanthi/iiitb_cg#acknowledgement)
-[**Contact Information**](https://github.com/drvasanthi/iiitb_cg#contact-information)
-[**Reference**](https://github.com/drvasanthi/iiitb_cg#references)
-
+[**Contributers**](https://github.com/drvasanthi/iiitb_cg#contributors)  
+[**Acknowledgment**](https://github.com/drvasanthi/iiitb_cg#acknowledgement)  
+[**Contact Information**](https://github.com/drvasanthi/iiitb_cg#contact-information)  
+[**Reference**](https://github.com/drvasanthi/iiitb_cg#references)  
 
   
 ## **I. Introduction**
