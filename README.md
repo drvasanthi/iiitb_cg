@@ -20,7 +20,7 @@ III. [**Physical Design from Netlist to GDSII**](https://github.com/drvasanthi/i
   5. [CTS](https://github.com/drvasanthi/iiitb_cg#4-clcok-tree-synthesis-cts)  
   6. [Routing](https://github.com/drvasanthi/iiitb_cg#4-routing)  
   7. [SignOff](https://github.com/drvasanthi/iiitb_cg#4-signoff)  
-[**Author**]()
+[**Author**](https://github.com/drvasanthi/iiitb_cg#author)  
 [**Reference**](https://github.com/drvasanthi/iiitb_cg#references)  
 [**Contributers**](https://github.com/drvasanthi/iiitb_cg#contributors)  
 [**Acknowledgment**](https://github.com/drvasanthi/iiitb_cg#acknowledgement)  
