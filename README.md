@@ -314,12 +314,14 @@ a) To invoke placement
 b) Opening floorplan in MAGIC
 
 ```
-magic -T /home//vasanthi/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_icg.def &
+magic -T /home/vasanthi/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_icg.def &
 ```
 
 ![pl1](https://user-images.githubusercontent.com/67214592/186332510-f4c55a6c-e1e7-4d1d-afbc-1b1bd7342a8a.PNG)
 
 ![pl2](https://user-images.githubusercontent.com/67214592/186332524-90356937-fdb8-4b0a-82c2-ba829412077b.PNG)
+
+![image](https://user-images.githubusercontent.com/67214592/186431825-10082f77-f8f3-4008-8973-3a302bc26319.png)
 
 c) Reports
 
@@ -343,6 +345,26 @@ a) To invoke CTS
 
 ![run_cts](https://user-images.githubusercontent.com/67214592/186332680-82acf1f8-95a6-4bb4-84a8-938a171d2eef.PNG)
 
+b) Reports
+
+![image](https://user-images.githubusercontent.com/67214592/186417408-773a431b-8237-4190-bffd-88f1b1338b4b.png)
+
+**tns & wns report**
+
+![image](https://user-images.githubusercontent.com/67214592/186417759-8ce45076-e08d-469e-98fb-34f3a4ba7303.png)
+
+**Setup & Hold Report**
+
+![image](https://user-images.githubusercontent.com/67214592/186417880-6d3f3ea5-0fa1-4c99-8627-0998971898d3.png)
+
+**Power Report**
+
+![image](https://user-images.githubusercontent.com/67214592/186418099-cd41488f-4bbe-45e8-b124-21a0e8b10613.png)
+
+**Area Report**
+
+![image](https://user-images.githubusercontent.com/67214592/186418198-efb7d3fd-d494-43ac-9955-16e3132f08fd.png)
+
 ### **4. Routing**
 
 Routing is the stage after Clock Tree Synthesis and optimization where-
@@ -359,9 +381,56 @@ After CTS, we have information of all the placed cells, blockages, clock tree bu
 * The Timing DRCs are met.
 * The Timing QoR is good.
 
+Routing is performed in two stages:
+
+Fast route - Implemented using FastROAD. It generates routing guides.
+Detailed route - Implemented using TritonRoute. It uses the routing guides generated in fast route to find the best route and makes connections.
+
 a) To Invoke Routing
 
 ![run_routing](https://user-images.githubusercontent.com/67214592/186332797-9a888c52-e9f8-4739-b4bc-a248ec35d1bc.PNG)
+
+b) Opening Routing in MAGIC Tool
+
+![image](https://user-images.githubusercontent.com/67214592/186422839-89a1a0f6-bfb9-4670-be28-6ac4befb6269.png)
+
+![image](https://user-images.githubusercontent.com/67214592/186422738-e176d4d1-d696-4f3e-866f-f4f2d81efd41.png)
+
+c) Reports
+
+**Congestion Report**
+
+![image](https://user-images.githubusercontent.com/67214592/186421693-3387e433-7691-4c80-b4af-be8701896760.png)
+
+**tns, wns, setup and hold reports**
+
+![image](https://user-images.githubusercontent.com/67214592/186421908-cc2ebd42-5018-4eb8-82fd-535188d0f026.png)
+
+**Power and Area Report**
+
+![image](https://user-images.githubusercontent.com/67214592/186422008-cc991dd9-5984-4fa7-a17b-c569f0ae7bde.png)
+
+### **4. Signoff**
+
+a) Final GDSII 
+
+![lay2](https://user-images.githubusercontent.com/67214592/186435891-3f149044-e418-438d-a46a-53666b2c7137.PNG)
+
+![lay1](https://user-images.githubusercontent.com/67214592/186435929-8a31ce5c-9633-41c9-80a7-0c36fbd048f5.PNG)
+
+![lay3](https://user-images.githubusercontent.com/67214592/186435950-c6f4a88a-972a-4711-a056-c4c7c0597047.PNG)
+
+b) Report
+
+**Power Report**
+
+![image](https://user-images.githubusercontent.com/67214592/186425781-a12d106a-90e6-4663-9d0e-f3c0f2a75e1a.png)
+
+![image](https://user-images.githubusercontent.com/67214592/186426070-629f8f0b-f323-4017-af1d-2c34ac178719.png)
+
+**Area Report**
+
+![image](https://user-images.githubusercontent.com/67214592/186426223-bda0b4cd-6462-4a4e-86d0-9f99804b0a6c.png)
 
 ## Contributors
 
