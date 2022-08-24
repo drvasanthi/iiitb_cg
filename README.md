@@ -231,6 +231,8 @@ $ make install
 
 ### **2. Synthesis**
 
+Synthesis is process of converting RTL (Synthesizable Verilog code) to technology specific gate level netlist (includes nets, sequential and combinational cells and their connectivity).
+
 a) To start openlane, we open the shell in openLANE_flow(openlane) directory and run the command,
 
 ```
@@ -249,6 +251,7 @@ c) To invoke synthesis
 This runs the synthesis where yosys translates RTL into circuit using generic components and abc maps the circuit to Standard Cells.
 
 **Physical Cells**  
+
 ![image](https://user-images.githubusercontent.com/67214592/186326669-dacc8deb-731c-4873-aa0d-8273371f07c1.png)
 
 Here we define a term Flop Ratio.
@@ -260,11 +263,7 @@ Flop Ratio = Ratio of total number of flip flops  /  Total number of cells prese
 
 ### **2. Floorplan**
 
-First step in the floorplan is to define the dimensions of core and die, which in turn contraints the dimensions of the SoC and the IPs contained in it. We define two terms in this regard - Utilization Factor and Aspect Ratio.
-
-Utilization Factor- Utilization factor represents the percentage of the core area occupied by the netlist(with cells abutting each other and excluding the wires). So it is defined as the ratio of Area ocupied by the netlist and Total area of the core.
-
-Aspect Ratio- Aspect ratio is the ratio of Height and Width of the core and tells if the core is rectungular or square.
+Physical design is process of transforming netlist into layout which is manufacture-able [GDS]. Physical design process is often referred as PnR (Place and Route) / APR (Automatic Place & Route). Main steps in physical design are placement of all logical cells, clock tree synthesis & routing. During this process of physical design timing, power, design & technology constraints have to be met. Further design might require being optimized w.r.t area, power and performance.
 
 a) To invoke floorplan
 
@@ -321,11 +320,27 @@ magic -T /home/Desktop/vasanthi/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.te
 
 ### **4. Clcok Tree Synthesis (CTS)**
 
+Clock Tree Synthesis (CTS) is one of the most important stages in PnR. CTS QoR decides timing convergence & power. In most of the ICs clock consumes 30-40 % of total power. So efficient clock architecture, clock gating & clock tree implementation helps to reduce power.
+
 a) To invoke CTS
 
 ![run_cts](https://user-images.githubusercontent.com/67214592/186332680-82acf1f8-95a6-4bb4-84a8-938a171d2eef.PNG)
 
 ### **4. Routing**
+
+Routing is the stage after Clock Tree Synthesis and optimization where-
+
+* Exact paths for the interconnection of standard cells and macros and I/O pins are determined.
+* Electrical connections using metals and vias are created in the layout, defined by the logical connections present in the netlist.
+
+After CTS, we have information of all the placed cells, blockages, clock tree buffers/inverters and I/O pins. The tool relies on this information to electrically complete all connections defined in the netlist such that-
+
+* There are minimal DRC violations while routing.
+* The design is 100% routed with minimal LVS violations.
+* There are minimal SI related violations.
+* There must be no or minimal congestion hot spots.
+* The Timing DRCs are met.
+* The Timing QoR is good.
 
 a) To Invoke Routing
 
