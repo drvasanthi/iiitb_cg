@@ -20,11 +20,12 @@ III. [**Physical Design from Netlist to GDSII**](https://github.com/drvasanthi/i
   5. [CTS](https://github.com/drvasanthi/iiitb_cg#4-clcok-tree-synthesis-cts)  
   6. [Routing](https://github.com/drvasanthi/iiitb_cg#4-routing)  
   7. [SignOff](https://github.com/drvasanthi/iiitb_cg#4-signoff)  
-
+[**Author**]()
+[**Reference**](https://github.com/drvasanthi/iiitb_cg#references)  
 [**Contributers**](https://github.com/drvasanthi/iiitb_cg#contributors)  
 [**Acknowledgment**](https://github.com/drvasanthi/iiitb_cg#acknowledgement)  
 [**Contact Information**](https://github.com/drvasanthi/iiitb_cg#contact-information)  
-[**Reference**](https://github.com/drvasanthi/iiitb_cg#references)  
+
 
   
 ## **I. Introduction**
@@ -436,6 +437,22 @@ b) Report
 
 ![image](https://user-images.githubusercontent.com/67214592/186426223-bda0b4cd-6462-4a4e-86d0-9f99804b0a6c.png)
 
+## Author
+
+Vasanthi D R
+
+## References
+ 
+ [1] VLSI System Design: https://www.vlsisystemdesign.com/
+ 
+ [2] SkyWater SKY130 PDK: https://skywater-pdk.readthedocs.io/en/main/contents/libraries/foundry-provided.html
+ 
+ [3] RTL Design using Verilog with Sky130 Technology: https://www.vsdiat.com/dashboard
+ 
+ [4] Openlane - SKY130: https://github.com/The-OpenROAD-Project/OpenLane
+ 
+ [5] Magic Installation: https://github.com/RTimothyEdwards/magic
+ 
 ## Contributors
 
   * Vasanthi D R
@@ -459,15 +476,4 @@ b) Report
   * Madhav Rao, Professor, IIIT-Bangalore. mr@iiitb.ac.in
   * Nanditha Rao, Professor, IIIT-Bangalore. nanditha.rao@iiitb.ac.in
   
- ## References
- 
- [1] VLSI System Design: https://www.vlsisystemdesign.com/
- 
- [2] SkyWater SKY130 PDK: https://skywater-pdk.readthedocs.io/en/main/contents/libraries/foundry-provided.html
- 
- [3] RTL Design using Verilog with Sky130 Technology: https://www.vsdiat.com/dashboard
- 
- [4] Openlane - SKY130: https://github.com/The-OpenROAD-Project/OpenLane
- 
- [5] Magic Installation: https://github.com/RTimothyEdwards/magic
  
