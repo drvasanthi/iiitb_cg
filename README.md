@@ -186,18 +186,47 @@ $ gtkwave iiitb.icg_tb.v
 $ git clone https://github.com/The-OpenROAD-Project/OpenLane.git
 ```
 
-```
 Pre-request
-* GNU Make
-* Python 3.6+ with pip and virtualenv
-* Git 2.22+
-* Docker 19.03.12+
+
+* GNU Make  
+```
+$ sudo apt-get install build-essential
+$ sudo apt-get install gcc
 ```
 
+* Python 3.6+ with pip and virtualenv  
+```
+sudo apt install -y build-essential python3 python3-venv python3-pip
+```
+
+* Git 2.22+  
+```
+sudo apt-get install git
+```
+
+* Docker 19.03.12+  
+
+[Docker Installlation Instruction](https://docs.docker.com/engine/install/ubuntu/)
+
+
+* Setting up OpenLane
 ```
 cd OpenLane/
     make
     make test
+```
+
+* Magic Installation
+```
+$ git clone https://github.com/RTimothyEdwards/magic
+
+$ cd magic
+
+$ ./configure
+
+$ make
+
+$ make install
 ```
 
 ### **2. Synthesis**
