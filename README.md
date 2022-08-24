@@ -5,18 +5,22 @@
 ## TABLE OF CONTENT
 
 I. [**Introduction to Integrated Clock Gating**](https://github.com/drvasanthi/iiitb_cg/blob/main/README.md#introduction)    
+
 II. [**RTL Design and Synthesis**](https://github.com/drvasanthi/iiitb_cg#ii-rtl-design-and-synthesis)  
-	1. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu](https://github.com/drvasanthi/iiitb_cg#1-icarus-verilog-iverilog--yosys-installation-on-ubuntu)  
-	2. [RTL Pre-Simulation](https://github.com/drvasanthi/iiitb_cg#rtl-pre-simulation)  
-	3. [Synthesis](https://github.com/drvasanthi/iiitb_cg#icg---synthesis)  
-	3. [GLS Post-simulation](https://github.com/drvasanthi/iiitb_cg#gls-post-simulation)  
+  1. [Icarus Verilog (iverilog) & Yosys Installation on Ubuntu](https://github.com/drvasanthi/iiitb_cg#1-icarus-verilog-iverilog--yosys-installation-on-ubuntu)  
+  2. [RTL Pre-Simulation](https://github.com/drvasanthi/iiitb_cg#rtl-pre-simulation)  
+  3. [Synthesis](https://github.com/drvasanthi/iiitb_cg#icg---synthesis)  
+  4. [GLS Post-simulation](https://github.com/drvasanthi/iiitb_cg#gls-post-simulation)  
+
 III. [**Physical Design from Netlist to GDSII**](https://github.com/drvasanthi/iiitb_cg#iii-physical-design-from-netlist-to-gdsii)  
-	1. Invoke OpenLane  
-	2. [Synthesis]    
-	3. [Floorplan]  
-	4. [Placement]  
-	5. [CTS]  
-	6. [Routing]  
+  1. [Invoke OpenLane](https://github.com/drvasanthi/iiitb_cg#1-invoke-openlane)  
+  2. [Synthesis](https://github.com/drvasanthi/iiitb_cg#2-synthesis)     
+  3. [Floorplan](https://github.com/drvasanthi/iiitb_cg#2-floorplan)  
+  4. [Placement](https://github.com/drvasanthi/iiitb_cg#3-placement)  
+  5. [CTS](https://github.com/drvasanthi/iiitb_cg#4-clcok-tree-synthesis-cts)  
+  6. [Routing](https://github.com/drvasanthi/iiitb_cg#4-routing)  
+  7. [SignOff](https://github.com/drvasanthi/iiitb_cg#4-signoff)  
+
 [**Contributers**](https://github.com/drvasanthi/iiitb_cg#contributors)  
 [**Acknowledgment**](https://github.com/drvasanthi/iiitb_cg#acknowledgement)  
 [**Contact Information**](https://github.com/drvasanthi/iiitb_cg#contact-information)  
@@ -25,7 +29,7 @@ III. [**Physical Design from Netlist to GDSII**](https://github.com/drvasanthi/i
   
 ## **I. Introduction**
 
- The project design is based on Integrated Clock Gating using SKY 130nm technology node. 
+The project design is based on Integrated Clock Gating using SKY 130nm technology node. 
 
   In current VLSI design, the power dissipation is the most important parameter that signifies the need of low power circuits. In most of the ICs clock consumes 30-40 % of total power. So the integrated clock gating logic is used in many synchronous circuits for reducing dynamic power dissipation, by removing the clock signal when the circuit is not in use. 
 
@@ -383,7 +387,7 @@ After CTS, we have information of all the placed cells, blockages, clock tree bu
 
 Routing is performed in two stages:
 
-Fast route - Implemented using FastROAD. It generates routing guides.
+Fast route - Implemented using FastROAD. It generates routing guides.  
 Detailed route - Implemented using TritonRoute. It uses the routing guides generated in fast route to find the best route and makes connections.
 
 a) To Invoke Routing
