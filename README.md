@@ -231,6 +231,105 @@ $ make install
 
 ### **2. Synthesis**
 
+a) To start openlane, we open the shell in openLANE_flow(openlane) directory and run the command,
+
+```
+& make mount
+```
+b) Import openlane packages specifying its version and specify the design that we intend to work on, which is iiitb_icg
+
+![pack and prep](https://user-images.githubusercontent.com/67214592/186325966-6d4f1763-9e81-469b-8054-e1b075e11b87.PNG)
+
+This command merges two lefs and places it in a new folder which is named as date and time while running the command, inside directory designs/iiitb_icg/runs/.
+
+c) To invoke synthesis
+
+![run_synth](https://user-images.githubusercontent.com/67214592/186326556-ca78b091-f5c3-47f0-8974-57c7c96f7e03.PNG)
+
+This runs the synthesis where yosys translates RTL into circuit using generic components and abc maps the circuit to Standard Cells.
+
+**Physical Cells**  
+![image](https://user-images.githubusercontent.com/67214592/186326669-dacc8deb-731c-4873-aa0d-8273371f07c1.png)
+
+Here we define a term Flop Ratio.
+
+Flop Ratio = Ratio of total number of flip flops  /  Total number of cells present in the design  = 4/8 = 0.5
+
+**Power and Area Report**  
+![image](https://user-images.githubusercontent.com/67214592/186327242-487d56e9-3457-4403-ae33-df936387f702.png)
+
+### **2. Floorplan**
+
+First step in the floorplan is to define the dimensions of core and die, which in turn contraints the dimensions of the SoC and the IPs contained in it. We define two terms in this regard - Utilization Factor and Aspect Ratio.
+
+Utilization Factor- Utilization factor represents the percentage of the core area occupied by the netlist(with cells abutting each other and excluding the wires). So it is defined as the ratio of Area ocupied by the netlist and Total area of the core.
+
+Aspect Ratio- Aspect ratio is the ratio of Height and Width of the core and tells if the core is rectungular or square.
+
+a) To invoke floorplan
+
+![run_floorplan](https://user-images.githubusercontent.com/67214592/186327462-cf32d89a-a8bd-446b-a144-0432f295e503.PNG)
+
+**Die Area**
+
+
+
+**Core Area**
+
+![image](https://user-images.githubusercontent.com/67214592/186331168-59e4dc36-79a0-47c0-ac2d-34c7569f52f6.png)
+
+** Endcap & Tap Cells**
+
+![image](https://user-images.githubusercontent.com/67214592/186331493-b51faae4-7c6b-49e7-84c3-37846fbfd99e.png)
+
+b) Opening Floorplan in MAGIC Tool
+
+To view the floorplan created, we need to open it in magic as follows,
+
+```
+$ magic -T /home/Desktop/vasanthi/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_icg.def &
+```
+
+The above commmand first reads the tech file which is sky130A.tech, reads lef file which is merged.max.lef and def file which is iiitb_icg.def.
+
+![fp1](https://user-images.githubusercontent.com/67214592/186331827-135d234c-b06f-416d-9faf-68f731a5bd45.PNG)
+
+* In the layout, many i/o pins can be seen at the border of the layout, which are equidistant from each other by default.
+* Many tap cells can be seen all over the layout, whcih connect n-well to Vdd and substrate to ground to prevent latch-up. These tap cells are diagonllay equidistant from each other.
+
+![fp2](https://user-images.githubusercontent.com/67214592/186331843-fd82da67-49ed-4cd6-96ca-a19ec629d370.PNG)
+
+A few standard cells can also been at the lower left corner of the layout.
+
+
+
+### **3. Placement**
+
+a) To invoke placement
+
+![run_placeent](https://user-images.githubusercontent.com/67214592/186332290-166089dd-250b-4e0b-a84e-1f4bfd84df7e.PNG)
+
+b) Opening floorplan in MAGIC
+
+```
+magic -T /home/Desktop/vasanthi/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_icg.def &
+```
+
+![pl1](https://user-images.githubusercontent.com/67214592/186332510-f4c55a6c-e1e7-4d1d-afbc-1b1bd7342a8a.PNG)
+
+![pl2](https://user-images.githubusercontent.com/67214592/186332524-90356937-fdb8-4b0a-82c2-ba829412077b.PNG)
+
+### **4. Clcok Tree Synthesis (CTS)**
+
+a) To invoke CTS
+
+![run_cts](https://user-images.githubusercontent.com/67214592/186332680-82acf1f8-95a6-4bb4-84a8-938a171d2eef.PNG)
+
+### **4. Routing**
+
+a) To Invoke Routing
+
+![run_routing](https://user-images.githubusercontent.com/67214592/186332797-9a888c52-e9f8-4739-b4bc-a248ec35d1bc.PNG)
 
 ## Contributors
 
