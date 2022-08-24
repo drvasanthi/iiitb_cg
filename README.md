@@ -259,6 +259,7 @@ Here we define a term Flop Ratio.
 Flop Ratio = Ratio of total number of flip flops  /  Total number of cells present in the design  = 4/8 = 0.5
 
 **Power and Area Report**  
+
 ![image](https://user-images.githubusercontent.com/67214592/186327242-487d56e9-3457-4403-ae33-df936387f702.png)
 
 ### **2. Floorplan**
@@ -271,7 +272,7 @@ a) To invoke floorplan
 
 **Die Area**
 
-
+![image](https://user-images.githubusercontent.com/67214592/186412089-45f78e52-38ed-4a80-9b31-ad4d2e801df7.png)
 
 **Core Area**
 
@@ -286,7 +287,7 @@ b) Opening Floorplan in MAGIC Tool
 To view the floorplan created, we need to open it in magic as follows,
 
 ```
-$ magic -T /home/Desktop/vasanthi/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_icg.def &
+$ magic -T /home/vasanthi/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.max.lef def read iiitb_icg.def &
 ```
 
 The above commmand first reads the tech file which is sky130A.tech, reads lef file which is merged.max.lef and def file which is iiitb_icg.def.
@@ -298,11 +299,13 @@ The above commmand first reads the tech file which is sky130A.tech, reads lef fi
 
 ![fp2](https://user-images.githubusercontent.com/67214592/186331843-fd82da67-49ed-4cd6-96ca-a19ec629d370.PNG)
 
-A few standard cells can also been at the lower left corner of the layout.
+* A few standard cells can also been at the lower left corner of the layout.
 
-
+![image](https://user-images.githubusercontent.com/67214592/186412961-0ff8aca9-dafc-4f5f-a3e3-9f5ca2d50b03.png)
 
 ### **3. Placement**
+
+In this stage, all the standard cells are placed in the design (size, shape & macro-placement is done in floor-plan). Placement will be driven by different criteria like timing driven, congestion driven, power optimization etc. Timing & Routing convergence depends a lot on quality of placement. 
 
 a) To invoke placement
 
@@ -311,12 +314,26 @@ a) To invoke placement
 b) Opening floorplan in MAGIC
 
 ```
-magic -T /home/Desktop/vasanthi/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_icg.def &
+magic -T /home//vasanthi/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_icg.def &
 ```
 
 ![pl1](https://user-images.githubusercontent.com/67214592/186332510-f4c55a6c-e1e7-4d1d-afbc-1b1bd7342a8a.PNG)
 
 ![pl2](https://user-images.githubusercontent.com/67214592/186332524-90356937-fdb8-4b0a-82c2-ba829412077b.PNG)
+
+c) Reports
+
+**Area Report**
+
+![image](https://user-images.githubusercontent.com/67214592/186414516-7e03381a-1f7d-4156-85ff-decc64a594a6.png)
+
+**Power Report**
+
+![image](https://user-images.githubusercontent.com/67214592/186414759-b8d07597-d786-4cd4-a263-722a22b11bf3.png)
+
+**Setup and Hold Slack**
+
+![image](https://user-images.githubusercontent.com/67214592/186415190-7eed8e2b-a4eb-4dfa-b59f-c5a4072b5994.png)
 
 ### **4. Clcok Tree Synthesis (CTS)**
 
