@@ -20,7 +20,7 @@ III. [**Physical Design from Netlist to GDSII**](https://github.com/drvasanthi/i
   5. [Placement](https://github.com/drvasanthi/iiitb_cg#3-placement)  
   6. [CTS](https://github.com/drvasanthi/iiitb_cg#4-clcok-tree-synthesis-cts)  
   7. [Routing](https://github.com/drvasanthi/iiitb_cg#4-routing)  
-  7. [SignOff](https://github.com/drvasanthi/iiitb_cg#4-signoff)  
+    
 [**Author**](https://github.com/drvasanthi/iiitb_cg#author)  
 [**Reference**](https://github.com/drvasanthi/iiitb_cg#references)  
 [**Contributers**](https://github.com/drvasanthi/iiitb_cg#contributors)  
@@ -316,7 +316,7 @@ $ make install
   
   ![image](https://user-images.githubusercontent.com/67214592/187141055-56c7d6a4-5ad5-4755-b9da-aaab1bb24b75.png)
   
-### **2. Synthesis**
+### **3. Synthesis**
 
 Synthesis is process of converting RTL (Synthesizable Verilog code) to technology specific gate level netlist (includes nets, sequential and combinational cells and their connectivity).
 
@@ -359,7 +359,7 @@ Synthesis is process of converting RTL (Synthesizable Verilog code) to technolog
   
   ![image](https://user-images.githubusercontent.com/67214592/187152989-6354b999-5cef-4c76-a123-13f676af0b15.png)
 
-### **2. Floorplan**
+### **4. Floorplan**
 
 Physical design is process of transforming netlist into layout which is manufacture-able [GDS]. Physical design process is often referred as PnR (Place and Route) / APR (Automatic Place & Route). Main steps in physical design are placement of all logical cells, clock tree synthesis & routing. During this process of physical design timing, power, design & technology constraints have to be met. Further design might require being optimized w.r.t area, power and performance.
 
@@ -367,167 +367,146 @@ Physical design is process of transforming netlist into layout which is manufact
   
   ![fp run1](https://user-images.githubusercontent.com/67214592/187153230-2fc88096-d71e-4ffa-b9ea-3b283fdb8833.PNG)
   
-  **Die Area**
+  * **Die Area**
   
   ![image](https://user-images.githubusercontent.com/67214592/187153594-bec9d6a9-f40f-4dc2-a99a-6e0b46f17845.png)
   
-  **Core Area**
+  * **Core Area**
   
   ![image](https://user-images.githubusercontent.com/67214592/187153756-198d8808-a39d-49c2-8b50-035e01b0d927.png)
   
-  ** Endcap & Tap Cells**
+  * **Endcap & Tap Cells**
   
   ![image](https://user-images.githubusercontent.com/67214592/187153967-544ae1f6-ee7b-463e-827e-b38f520c0669.png)
+  
+  > Step 2: Opening Floorplan in MAGIC Tool
+  
+  To view the floorplan created, we need to open it in magic as follows,
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187172555-8e6fd9da-1330-48b4-9892-c126865829b0.png)
+  
+  The above commmand first reads the tech file which is sky130A.tech, reads lef file which is merged.max.lef and def file which is iiitb_icg.def.
+  
+  ![fp1](https://user-images.githubusercontent.com/67214592/187172242-aa415fb8-3440-4081-a625-ac5b7eab8525.PNG)
+  
+  * In the layout, many i/o pins can be seen at the border of the layout, which are equidistant from each other by default.
+  
+  * * Many tap cells can be seen all over the layout, whcih connect n-well to Vdd and substrate to ground to prevent latch-up. These tap cells are diagonllay equidistant from each other.
+  
+  ![fp2](https://user-images.githubusercontent.com/67214592/187172290-e711dac8-36ff-4bbb-826b-c44dec289063.PNG)
+  
+  * A few standard cells can also been at the lower left corner of the layout.
+  
+  ![fp3](https://user-images.githubusercontent.com/67214592/187172689-3e99cbef-87a4-4b2a-883e-ccfa529316cc.PNG)
 
-b) Opening Floorplan in MAGIC Tool
-
-To view the floorplan created, we need to open it in magic as follows,
-
-```
-$ magic -T /home/vasanthi/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.max.lef def read iiitb_icg.def &
-```
-
-The above commmand first reads the tech file which is sky130A.tech, reads lef file which is merged.max.lef and def file which is iiitb_icg.def.
-
-![fp1](https://user-images.githubusercontent.com/67214592/186331827-135d234c-b06f-416d-9faf-68f731a5bd45.PNG)
-
-* In the layout, many i/o pins can be seen at the border of the layout, which are equidistant from each other by default.
-* Many tap cells can be seen all over the layout, whcih connect n-well to Vdd and substrate to ground to prevent latch-up. These tap cells are diagonllay equidistant from each other.
-
-![fp2](https://user-images.githubusercontent.com/67214592/186331843-fd82da67-49ed-4cd6-96ca-a19ec629d370.PNG)
-
-* A few standard cells can also been at the lower left corner of the layout.
-
-![image](https://user-images.githubusercontent.com/67214592/186412961-0ff8aca9-dafc-4f5f-a3e3-9f5ca2d50b03.png)
-
-### **3. Placement**
+### **5. Placement**
 
 In this stage, all the standard cells are placed in the design (size, shape & macro-placement is done in floor-plan). Placement will be driven by different criteria like timing driven, congestion driven, power optimization etc. Timing & Routing convergence depends a lot on quality of placement. 
 
-a) To invoke placement
+  > Step 1:To invoke placement
+  
+  ![pl run1](https://user-images.githubusercontent.com/67214592/187173740-f3192e75-bc0a-4cb1-a5bd-0bfe10f79b29.PNG)
+  
+  > Step 2: Opening floorplan in MAGIC
+  
+  ```  
+  magic -T /home/vasanthi/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_icg.def &  
+  ```
+  
+  ![pl1](https://user-images.githubusercontent.com/67214592/187173982-20451f42-7cb6-49a5-8ab2-609867d891be.PNG)
+  
+  * sky130_vsdinv inside integrated clock gating design
+  
+  ![pl2](https://user-images.githubusercontent.com/67214592/187174253-75b11182-3fec-4ea4-a500-06c18c7c96ff.PNG)
+  
+  ![pl3](https://user-images.githubusercontent.com/67214592/187174305-e047e129-22fe-4eeb-aa6f-8e6ea439a90e.PNG)
+  
+  > Step 3: Reports
+  
+  **Area Report**
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187174952-77f7cd2f-8c6e-4211-9ce1-71e6ad696e6c.png)
+  
+  **Power Report**
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187175099-2d76c5e6-ac6c-4518-896a-f5e4f9f8e44d.png)
+  
+  **Setup and Hold Slack**
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187175229-4c875f84-c1d0-4f27-9e11-b39e3f9b1673.png)
 
-![run_placeent](https://user-images.githubusercontent.com/67214592/186332290-166089dd-250b-4e0b-a84e-1f4bfd84df7e.PNG)
-
-b) Opening floorplan in MAGIC
-
-```
-magic -T /home/vasanthi/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_icg.def &
-```
-
-![pl1](https://user-images.githubusercontent.com/67214592/186332510-f4c55a6c-e1e7-4d1d-afbc-1b1bd7342a8a.PNG)
-
-![pl2](https://user-images.githubusercontent.com/67214592/186332524-90356937-fdb8-4b0a-82c2-ba829412077b.PNG)
-
-![image](https://user-images.githubusercontent.com/67214592/186431825-10082f77-f8f3-4008-8973-3a302bc26319.png)
-
-c) Reports
-
-**Area Report**
-
-![image](https://user-images.githubusercontent.com/67214592/186414516-7e03381a-1f7d-4156-85ff-decc64a594a6.png)
-
-**Power Report**
-
-![image](https://user-images.githubusercontent.com/67214592/186414759-b8d07597-d786-4cd4-a263-722a22b11bf3.png)
-
-**Setup and Hold Slack**
-
-![image](https://user-images.githubusercontent.com/67214592/186415190-7eed8e2b-a4eb-4dfa-b59f-c5a4072b5994.png)
-
-### **4. Clcok Tree Synthesis (CTS)**
+### **6. Clcok Tree Synthesis (CTS)**
 
 Clock Tree Synthesis (CTS) is one of the most important stages in PnR. CTS QoR decides timing convergence & power. In most of the ICs clock consumes 30-40 % of total power. So efficient clock architecture, clock gating & clock tree implementation helps to reduce power.
 
-a) To invoke CTS
+  > Step 1: To invoke CTS
+  
+  ![cts run1](https://user-images.githubusercontent.com/67214592/187175341-c4577af6-f188-49b6-b0b6-97b2cab26b63.PNG)
+  
+  > Step 2: Reports
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187176246-b1f8c24a-00e0-47ab-a9d8-ef89c709302f.png)
+  
+  * **tns & wns report**
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187176405-c3f89f4c-20f0-4fec-920d-a56ca82c59d0.png)
+  
+  * **Setup & Hold Report**
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187176618-1466f415-789d-4d48-9436-901ef26213c4.png)
+  
+  * **Power & Area Report**
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187176775-1d35c6c5-47f2-48ca-9189-f11fc32153de.png)
 
-![run_cts](https://user-images.githubusercontent.com/67214592/186332680-82acf1f8-95a6-4bb4-84a8-938a171d2eef.PNG)
+### **7. Routing**
 
-b) Reports
+  Routing is the stage after Clock Tree Synthesis and optimization where-
 
-![image](https://user-images.githubusercontent.com/67214592/186417408-773a431b-8237-4190-bffd-88f1b1338b4b.png)
+  * Exact paths for the interconnection of standard cells and macros and I/O pins are determined.
+  * Electrical connections using metals and vias are created in the layout, defined by the logical connections present in the netlist.
 
-**tns & wns report**
+  After CTS, we have information of all the placed cells, blockages, clock tree buffers/inverters and I/O pins. The tool relies on this information to electrically complete all connections defined in the netlist such that-
 
-![image](https://user-images.githubusercontent.com/67214592/186417759-8ce45076-e08d-469e-98fb-34f3a4ba7303.png)
+  * There are minimal DRC violations while routing.
+  * The design is 100% routed with minimal LVS violations.
+  * There are minimal SI related violations.
+  * There must be no or minimal congestion hot spots.
+  * The Timing DRCs are met.
+  * The Timing QoR is good.
 
-**Setup & Hold Report**
+  Routing is performed in two stages:
 
-![image](https://user-images.githubusercontent.com/67214592/186417880-6d3f3ea5-0fa1-4c99-8627-0998971898d3.png)
+  * Fast route - Implemented using FastROAD. It generates routing guides.  
+  * Detailed route - Implemented using TritonRoute. It uses the routing guides generated in fast route to find the best route and makes connections.
 
-**Power Report**
-
-![image](https://user-images.githubusercontent.com/67214592/186418099-cd41488f-4bbe-45e8-b124-21a0e8b10613.png)
-
-**Area Report**
-
-![image](https://user-images.githubusercontent.com/67214592/186418198-efb7d3fd-d494-43ac-9955-16e3132f08fd.png)
-
-### **4. Routing**
-
-Routing is the stage after Clock Tree Synthesis and optimization where-
-
-* Exact paths for the interconnection of standard cells and macros and I/O pins are determined.
-* Electrical connections using metals and vias are created in the layout, defined by the logical connections present in the netlist.
-
-After CTS, we have information of all the placed cells, blockages, clock tree buffers/inverters and I/O pins. The tool relies on this information to electrically complete all connections defined in the netlist such that-
-
-* There are minimal DRC violations while routing.
-* The design is 100% routed with minimal LVS violations.
-* There are minimal SI related violations.
-* There must be no or minimal congestion hot spots.
-* The Timing DRCs are met.
-* The Timing QoR is good.
-
-Routing is performed in two stages:
-
-Fast route - Implemented using FastROAD. It generates routing guides.  
-Detailed route - Implemented using TritonRoute. It uses the routing guides generated in fast route to find the best route and makes connections.
-
-a) To Invoke Routing
-
-![run_routing](https://user-images.githubusercontent.com/67214592/186332797-9a888c52-e9f8-4739-b4bc-a248ec35d1bc.PNG)
-
-b) Opening Routing in MAGIC Tool
-
-![image](https://user-images.githubusercontent.com/67214592/186422839-89a1a0f6-bfb9-4670-be28-6ac4befb6269.png)
-
-![image](https://user-images.githubusercontent.com/67214592/186422738-e176d4d1-d696-4f3e-866f-f4f2d81efd41.png)
-
-c) Reports
-
-**Congestion Report**
-
-![image](https://user-images.githubusercontent.com/67214592/186421693-3387e433-7691-4c80-b4af-be8701896760.png)
-
-**tns, wns, setup and hold reports**
-
-![image](https://user-images.githubusercontent.com/67214592/186421908-cc2ebd42-5018-4eb8-82fd-535188d0f026.png)
-
-**Power and Area Report**
-
-![image](https://user-images.githubusercontent.com/67214592/186422008-cc991dd9-5984-4fa7-a17b-c569f0ae7bde.png)
-
-### **4. Signoff**
-
-a) Final GDSII 
-
-![lay2](https://user-images.githubusercontent.com/67214592/186435891-3f149044-e418-438d-a46a-53666b2c7137.PNG)
-
-![lay1](https://user-images.githubusercontent.com/67214592/186435929-8a31ce5c-9633-41c9-80a7-0c36fbd048f5.PNG)
-
-![lay3](https://user-images.githubusercontent.com/67214592/186435950-c6f4a88a-972a-4711-a056-c4c7c0597047.PNG)
-
-b) Report
-
-**Power Report**
-
-![image](https://user-images.githubusercontent.com/67214592/186425781-a12d106a-90e6-4663-9d0e-f3c0f2a75e1a.png)
-
-![image](https://user-images.githubusercontent.com/67214592/186426070-629f8f0b-f323-4017-af1d-2c34ac178719.png)
-
-**Area Report**
-
-![image](https://user-images.githubusercontent.com/67214592/186426223-bda0b4cd-6462-4a4e-86d0-9f99804b0a6c.png)
+  > Step 1: To Invoke Routing
+  
+  ![routing run1](https://user-images.githubusercontent.com/67214592/187177152-f2bb745b-6e55-4fc9-8e9f-5640ed5ddcb9.PNG)
+  
+  > Step 2: Opening Routing in MAGIC Tool
+  
+  ```
+  magic -T /home/vasanthi/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_icg.def & 
+  ```
+  
+  ![r1](https://user-images.githubusercontent.com/67214592/187178696-c0c9a94c-db4f-4243-b2a9-849d5dc8b458.PNG)
+  
+  ![R2](https://user-images.githubusercontent.com/67214592/187178742-5ff5c596-bc2f-4f70-8bb4-4fce3a3a5df6.PNG)
+  
+  > Step 3: Reports
+  
+  * **Congestion Report**
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187178339-3370eb0b-9c7b-49d1-a89c-6873a17a486b.png)
+  
+  * **tns, wns, setup and hold reports**
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187178472-28c4ae19-d854-4aec-b3ab-9592838fe902.png)
+  
+  * **Power and Area Report**
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187178598-cbd0933b-43d4-4722-832e-52d9b8fd2393.png)
 
 ## Author
 
