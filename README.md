@@ -14,11 +14,12 @@ II. [**RTL Design and Synthesis**](https://github.com/drvasanthi/iiitb_cg#ii-rtl
 
 III. [**Physical Design from Netlist to GDSII**](https://github.com/drvasanthi/iiitb_cg#iii-physical-design-from-netlist-to-gdsii)  
   1. [Invoke OpenLane](https://github.com/drvasanthi/iiitb_cg#1-invoke-openlane)  
-  2. [Synthesis](https://github.com/drvasanthi/iiitb_cg#2-synthesis)     
-  3. [Floorplan](https://github.com/drvasanthi/iiitb_cg#2-floorplan)  
-  4. [Placement](https://github.com/drvasanthi/iiitb_cg#3-placement)  
-  5. [CTS](https://github.com/drvasanthi/iiitb_cg#4-clcok-tree-synthesis-cts)  
-  6. [Routing](https://github.com/drvasanthi/iiitb_cg#4-routing)  
+  2. [To Build Inverter Standard Cell Design]
+  3. [Synthesis](https://github.com/drvasanthi/iiitb_cg#2-synthesis)     
+  4. [Floorplan](https://github.com/drvasanthi/iiitb_cg#2-floorplan)  
+  5. [Placement](https://github.com/drvasanthi/iiitb_cg#3-placement)  
+  6. [CTS](https://github.com/drvasanthi/iiitb_cg#4-clcok-tree-synthesis-cts)  
+  7. [Routing](https://github.com/drvasanthi/iiitb_cg#4-routing)  
   7. [SignOff](https://github.com/drvasanthi/iiitb_cg#4-signoff)  
 [**Author**](https://github.com/drvasanthi/iiitb_cg#author)  
 [**Reference**](https://github.com/drvasanthi/iiitb_cg#references)  
@@ -234,6 +235,87 @@ $ make
 $ make install
 ```
 
+### **2. To Build Inverter Standard Cell Design**
+
+  > Step 1: Invoke vsdstdcelldesign  
+   
+  ![image](https://user-images.githubusercontent.com/67214592/187136304-46165f15-f911-4c1f-b886-108bb54ab371.png)
+
+  > Step 2: 
+  
+  ![Capture](https://user-images.githubusercontent.com/67214592/187136598-8b29f43f-45ed-4c4b-b6f9-249d102c34c6.PNG)
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187137154-e7eecd44-1a01-4cc9-bd31-1ea6f47c94e1.png)
+
+  > Step 3:
+  
+  To simulate the inverter, we need a .spice file corresponding to the .mag file. We first extract the .mag file, whcih creates a .ext file in the same directory.
+  
+  ![extarct](https://user-images.githubusercontent.com/67214592/187137243-328e405b-7c1e-485a-b88d-e2af45ded44e.PNG)
+  
+  ![ext file](https://user-images.githubusercontent.com/67214592/187137318-d8c2d52e-216c-418a-95fe-eac47c71342e.PNG)
+
+  > Step 4:
+  
+  Then we convert the .ext into .spice including all the parasitics.
+  
+  ![spice](https://user-images.githubusercontent.com/67214592/187137402-3edffa84-1a1b-4a55-a8c4-2667925e6a7c.PNG)
+  
+  ![spice 1](https://user-images.githubusercontent.com/67214592/187137467-05361008-df4f-4339-bba9-e91026425bc9.PNG)
+  
+  > Step 5:
+    
+  Edit the .spice file to include model files, define power supply nodes and parasitics
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187138406-b5e480c8-dc2d-492d-ad5c-0af76f0827f3.png)
+  
+  > Step 6:
+  
+  Runing the simulation in ngspice
+  
+  ```  
+  ngspice sky130_inv.spice  
+  
+  plot y vs time a
+  
+  ```  
+  ![waveform1](https://user-images.githubusercontent.com/67214592/187140137-3411fa26-ca97-4265-b53d-f879c2b30445.PNG)
+
+  ![waveform](https://user-images.githubusercontent.com/67214592/187139544-73b2f369-bd1b-4c47-a363-93d4ffd9c164.PNG)
+  
+  > Step 7: 
+  
+  To check whether the first guideline is followed by our inverter, we identify the input and output ports and check if they lie on the intersection of tracks of the corresponding metal by aligning the grids in MAGIC layout to that of the tracks using the grid command in tkcon window. In our case, the porst lie on licon metal, so we align the `grid` corresponding to those values,
+  
+  ![grid initial](https://user-images.githubusercontent.com/67214592/187139784-c0cf1a4d-85f2-431f-ab3c-fbab65545fce.PNG)
+  
+  ![grid1](https://user-images.githubusercontent.com/67214592/187139833-456630f3-9e74-42d5-92f4-3a5833603322.PNG)
+  
+  > Step 8:
+  
+  Extract the lef file by typing the command in tkcon window
+  
+  ![lef write](https://user-images.githubusercontent.com/67214592/187140038-fc6ab403-094b-4673-808f-16ab33139040.PNG)
+  
+  ![lef file](https://user-images.githubusercontent.com/67214592/187140064-e04a8851-93a8-43ab-8da4-eeb12f42ca17.PNG)
+  
+  Save the file
+  
+  ![same mag](https://user-images.githubusercontent.com/67214592/187140281-5f8ffa09-9fd9-42e5-a3b6-7418b8fa6c8c.PNG)
+  
+  > Step 9:
+  
+  Copy the .lef file and .lib file to the source directory of main design
+  
+  ```
+  vasanthi@vasanthi-VirtualBox:~/Desktop/OpenLane/vsdstdcelldesign/libs$ cp sky130_vsdinv.lef /home/vasanthi/Desktop/OpenLane/designs/iiitb_icg/src
+  
+  vasanthi@vasanthi-VirtualBox:~/Desktop/OpenLane/vsdstdcelldesign/libs$ cp sky130_fd_sc_hd__* /home/vasanthi/Desktop/OpenLane/designs/iiitb_icg/src
+  
+  ```
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187141055-56c7d6a4-5ad5-4755-b9da-aaab1bb24b75.png)
+  
 ### **2. Synthesis**
 
 Synthesis is process of converting RTL (Synthesizable Verilog code) to technology specific gate level netlist (includes nets, sequential and combinational cells and their connectivity).
