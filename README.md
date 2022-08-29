@@ -14,12 +14,12 @@ II. [**RTL Design and Synthesis**](https://github.com/drvasanthi/iiitb_cg#ii-rtl
 
 III. [**Physical Design from Netlist to GDSII**](https://github.com/drvasanthi/iiitb_cg#iii-physical-design-from-netlist-to-gdsii)  
   1. [Invoke OpenLane](https://github.com/drvasanthi/iiitb_cg#1-invoke-openlane)  
-  2. [To Build Inverter Standard Cell Design]
-  3. [Synthesis](https://github.com/drvasanthi/iiitb_cg#2-synthesis)     
-  4. [Floorplan](https://github.com/drvasanthi/iiitb_cg#2-floorplan)  
-  5. [Placement](https://github.com/drvasanthi/iiitb_cg#3-placement)  
-  6. [CTS](https://github.com/drvasanthi/iiitb_cg#4-clcok-tree-synthesis-cts)  
-  7. [Routing](https://github.com/drvasanthi/iiitb_cg#4-routing)  
+  2. [To Build Inverter Standard Cell Design](https://github.com/drvasanthi/iiitb_cg#2-to-build-inverter-standard-cell-design)  
+  3. [Synthesis](https://github.com/drvasanthi/iiitb_cg#3-synthesis)      
+  4. [Floorplan](https://github.com/drvasanthi/iiitb_cg#4-floorplan)  
+  5. [Placement](https://github.com/drvasanthi/iiitb_cg#5-placement)  
+  6. [CTS](https://github.com/drvasanthi/iiitb_cg#6-clcok-tree-synthesis-cts)  
+  7. [Routing](https://github.com/drvasanthi/iiitb_cg#7-routing)  
     
 [**Author**](https://github.com/drvasanthi/iiitb_cg#author)  
 [**Reference**](https://github.com/drvasanthi/iiitb_cg#references)  
@@ -185,6 +185,12 @@ $ gtkwave iiitb.icg_tb.v
 ![glsicg](https://user-images.githubusercontent.com/67214592/183949929-0713fee6-cd95-44b2-b029-dab0a2a2c498.PNG)
 
 ## **III. Physical Design from Netlist to GDSII**
+
+Physical design is process of transforming netlist into layout which is manufacture-able [GDS]. Physical design process is often referred as PnR (Place and Route). Main steps in physical design are placement of all logical cells, clock tree synthesis & routing. During this process of physical design timing, power, design & technology constraints have to be met. Further design might require being optimized w.r.t power, performance and area.
+
+General Physical Design Flow:
+
+![image](https://user-images.githubusercontent.com/67214592/187185624-7162a2b4-18f8-4bb6-bf8c-d30a1c554cf6.png)
 
 ### **1. Invoke Openlane**  
 
