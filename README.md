@@ -320,54 +320,64 @@ $ make install
 
 Synthesis is process of converting RTL (Synthesizable Verilog code) to technology specific gate level netlist (includes nets, sequential and combinational cells and their connectivity).
 
-a) To start openlane, we open the shell in openLANE_flow(openlane) directory and run the command,
-
-```
-& make mount
-```
-b) Import openlane packages specifying its version and specify the design that we intend to work on, which is iiitb_icg
-
-![pack and prep](https://user-images.githubusercontent.com/67214592/186325966-6d4f1763-9e81-469b-8054-e1b075e11b87.PNG)
-
-This command merges two lefs and places it in a new folder which is named as date and time while running the command, inside directory designs/iiitb_icg/runs/.
-
-c) To invoke synthesis
-
-![run_synth](https://user-images.githubusercontent.com/67214592/186326556-ca78b091-f5c3-47f0-8974-57c7c96f7e03.PNG)
-
-This runs the synthesis where yosys translates RTL into circuit using generic components and abc maps the circuit to Standard Cells.
-
-**Physical Cells**  
-
-![image](https://user-images.githubusercontent.com/67214592/186326669-dacc8deb-731c-4873-aa0d-8273371f07c1.png)
-
-Here we define a term Flop Ratio.
-
-Flop Ratio = Ratio of total number of flip flops  /  Total number of cells present in the design  = 4/8 = 0.5
-
-**Power and Area Report**  
-
-![image](https://user-images.githubusercontent.com/67214592/186327242-487d56e9-3457-4403-ae33-df936387f702.png)
+  > Step1: To start openlane, we open the shell in openLANE_flow(openlane) directory and run the command,
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187149282-80b98d3c-82d2-40b6-a752-f02be949f654.png)
+  
+  > Step 2:Import openlane packages specifying its version and specify the design that we intend to work on, which is iiitb_icg
+  
+  ![pack and prep](https://user-images.githubusercontent.com/67214592/186325966-6d4f1763-9e81-469b-8054-e1b075e11b87.PNG)
+  
+  This command merges two lefs and places it in a new folder which is named as date and time while running the command, inside directory designs/iiitb_icg/runs/.
+  
+  > Step 3: Include the below command to include the additional lef into the flow:
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187150066-0151166f-aa7f-4f3b-a766-41ba1b18122c.png)
+  
+  > Step 4: To invoke synthesis
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187151843-4175edfa-a478-4e39-971b-16b4761cdd14.png)
+  
+  This runs the synthesis where yosys translates RTL into circuit using generic components and abc maps the circuit to Standard Cells.
+  
+  **Physical Cells**  
+  
+  ![physical cell](https://user-images.githubusercontent.com/67214592/187151993-a1bad438-fcf8-48ad-861c-6dc3298a7ac9.PNG)
+  
+  * Calcuation of Flop Ratio:
+  
+  ```
+  
+  Flop ratio = Number of D Flip flops 
+             ______________________
+             Total Number of cells
+  
+  Flop Ratio = 4/8=0.5
+  ```
+  
+  **Power and Area Report**  
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187152989-6354b999-5cef-4c76-a123-13f676af0b15.png)
 
 ### **2. Floorplan**
 
 Physical design is process of transforming netlist into layout which is manufacture-able [GDS]. Physical design process is often referred as PnR (Place and Route) / APR (Automatic Place & Route). Main steps in physical design are placement of all logical cells, clock tree synthesis & routing. During this process of physical design timing, power, design & technology constraints have to be met. Further design might require being optimized w.r.t area, power and performance.
 
-a) To invoke floorplan
-
-![run_floorplan](https://user-images.githubusercontent.com/67214592/186327462-cf32d89a-a8bd-446b-a144-0432f295e503.PNG)
-
-**Die Area**
-
-![image](https://user-images.githubusercontent.com/67214592/186412089-45f78e52-38ed-4a80-9b31-ad4d2e801df7.png)
-
-**Core Area**
-
-![image](https://user-images.githubusercontent.com/67214592/186331168-59e4dc36-79a0-47c0-ac2d-34c7569f52f6.png)
-
-** Endcap & Tap Cells**
-
-![image](https://user-images.githubusercontent.com/67214592/186331493-b51faae4-7c6b-49e7-84c3-37846fbfd99e.png)
+  > Step 1: To invoke floorplan
+  
+  ![fp run1](https://user-images.githubusercontent.com/67214592/187153230-2fc88096-d71e-4ffa-b9ea-3b283fdb8833.PNG)
+  
+  **Die Area**
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187153594-bec9d6a9-f40f-4dc2-a99a-6e0b46f17845.png)
+  
+  **Core Area**
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187153756-198d8808-a39d-49c2-8b50-035e01b0d927.png)
+  
+  ** Endcap & Tap Cells**
+  
+  ![image](https://user-images.githubusercontent.com/67214592/187153967-544ae1f6-ee7b-463e-827e-b38f520c0669.png)
 
 b) Opening Floorplan in MAGIC Tool
 
