@@ -230,15 +230,19 @@ cd OpenLane/
 
 * Magic Installation
 ```
-$ git clone https://github.com/RTimothyEdwards/magic
-
-$ cd magic
-
-$ ./configure
-
-$ make
-
-$ make install
+$ git clone https://github.com/RTimothyEdwards/magic  
+$ sudo apt-get install m4  
+$ sudo apt-get install tcl-dev  
+$ sudo apt-get install tk-dev  
+$ sudo apt-get install blt  
+$ sudo apt-get install freeglut3  
+$ sudo apt-get install libglut3  
+$ sudo apt-get install libglu1-mesa-dev  
+$ sudo apt-get install libgl1-mesa-dev  
+$ sudo apt-get install csh  
+$ ./configure  
+$ make  
+$ make install  
 ```
 
 ### **2. To Build Inverter Standard Cell Design**
