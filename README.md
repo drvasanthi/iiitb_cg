@@ -504,6 +504,8 @@ Clock Tree Synthesis (CTS) is one of the most important stages in PnR. CTS QoR d
   
   ![R2](https://user-images.githubusercontent.com/67214592/187178742-5ff5c596-bc2f-4f70-8bb4-4fce3a3a5df6.PNG)
   
+  ![image](https://user-images.githubusercontent.com/67214592/187410313-0a2f1873-c17f-41a4-9796-d3967fbe27ad.png)
+  
   > Step 3: Reports
   
   * **Congestion Report**
