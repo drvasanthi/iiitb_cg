@@ -500,6 +500,8 @@ Clock Tree Synthesis (CTS) is one of the most important stages in PnR. CTS QoR d
   magic -T /home/vasanthi/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_icg.def & 
   ```
   
+  * Post Layout
+  
   ![r1](https://user-images.githubusercontent.com/67214592/187178696-c0c9a94c-db4f-4243-b2a9-849d5dc8b458.PNG)
   
   ![R2](https://user-images.githubusercontent.com/67214592/187178742-5ff5c596-bc2f-4f70-8bb4-4fce3a3a5df6.PNG)
