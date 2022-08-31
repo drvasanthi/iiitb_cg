@@ -1,0 +1,6 @@
+
+23. Executing CHECK pass (checking for obvious problems).
+Checking module iiitb_icg...
+Warning: Wire iiitb_icg.\q1 is used but has no driver.
+Warning: Wire iiitb_icg.\q0 is used but has no driver.
+Found and reported 2 problems.

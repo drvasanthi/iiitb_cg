@@ -1,0 +1,20 @@
+
+24. Printing statistics.
+
+=== iiitb_icg ===
+
+   Number of wires:                 12
+   Number of wire bits:             12
+   Number of public wires:          10
+   Number of public wire bits:      10
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     sky130_fd_sc_hd__and2_2         1
+     sky130_fd_sc_hd__buf_1          1
+     sky130_fd_sc_hd__dfxtp_2        4
+     sky130_vsdinv                   2
+
+   Chip area for module '\iiitb_icg': 103.849600
+
