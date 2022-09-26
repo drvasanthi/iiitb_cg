@@ -528,7 +528,7 @@ Clock Tree Synthesis (CTS) is one of the most important stages in PnR. CTS QoR d
 > **1. Post-Layout Synthesis:**     
 > ** i. Gate count** 
 
-![gatecount](https://user-images.githubusercontent.com/67214592/192341497-391380c0-71c3-445d-a116-e2ee1eb82013.PNG)
+![gc](https://user-images.githubusercontent.com/67214592/192345391-382dad68-405b-47b2-9f87-492aacfd4f4b.PNG)
 
 **Gate Count = 8**
 
@@ -554,7 +554,7 @@ Clock Tree Synthesis (CTS) is one of the most important stages in PnR. CTS QoR d
 
 > **4. Power**
 
-![image](https://user-images.githubusercontent.com/67214592/187178598-cbd0933b-43d4-4722-832e-52d9b8fd2393.png)
+![power](https://user-images.githubusercontent.com/67214592/192345347-2663cb1b-6c90-49af-9d85-ba290fe559f9.PNG)
 
 **Internal Power = 1.24e-04 W**  
 **Switching Power = 2.39e-05 W**  
