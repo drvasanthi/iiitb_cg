@@ -521,6 +521,44 @@ Clock Tree Synthesis (CTS) is one of the most important stages in PnR. CTS QoR d
   * **Power and Area Report**
   
   ![image](https://user-images.githubusercontent.com/67214592/187178598-cbd0933b-43d4-4722-832e-52d9b8fd2393.png)
+  
+
+# **PARAMETER ANALYSIS**
+
+> 1. Post-Layout Synthesis: Gate count & Flop ratio
+
+![gatecount](https://user-images.githubusercontent.com/67214592/192341497-391380c0-71c3-445d-a116-e2ee1eb82013.PNG)
+
+**Gate Count = 8**
+
+Flop ratio = Number of D Flip flops 
+             ______________________
+             Total Number of cells
+  
+**Flop Ratio = 4/8 = 0.5**
+
+> 2. Area
+
+![box](https://user-images.githubusercontent.com/67214592/192341782-f9583a3b-a3d8-4ea0-8bf8-e449866304b3.PNG)
+
+**Area = 2336.147um2**
+
+> 3. Performance
+
+![1](https://user-images.githubusercontent.com/67214592/192342240-ced0374c-c080-48b0-bbcb-be64305ff73a.PNG)
+
+![2](https://user-images.githubusercontent.com/67214592/192342267-d0a93ca0-9c9f-480a-b0e1-9485d83bbfd7.PNG)
+
+> 4. Power
+
+![image](https://user-images.githubusercontent.com/67214592/187178598-cbd0933b-43d4-4722-832e-52d9b8fd2393.png)
+
+**Internal Power = 1.24e-04 W**
+**Switching Power = 2.39e-05 W**
+**Leakage Power = 2.06e-10 W**
+**Total Power = 1.48e-04 W**
+
+
 
 ## Author
 
