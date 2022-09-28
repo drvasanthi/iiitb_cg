@@ -552,6 +552,8 @@ Clock Tree Synthesis (CTS) is one of the most important stages in PnR. CTS QoR d
 
 ![3](https://user-images.githubusercontent.com/67214592/192343471-08c1f32a-3d0d-4eec-bfd3-193c5447d475.PNG)
 
+**Performance = (1/clock period - slack) = 1 / (10ns - 4.54ns) = 183.15Mhz**
+
 > **4. Power**
 
 ![power](https://user-images.githubusercontent.com/67214592/192345347-2663cb1b-6c90-49af-9d85-ba290fe559f9.PNG)
