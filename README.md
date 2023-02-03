@@ -577,20 +577,25 @@ Vasanthi D R
  
  [5] Magic Installation: https://github.com/RTimothyEdwards/magic
  
+## Author
+ 
+ Vasanthi D R
+ 
 ## Contributors
 
   * Vasanthi D R
   * Dantu Nandini Devi
-  * Kunal Ghosh
-  * Madhav Rao
-  * Nanditha Rao
+  * Kunal Ghosh  
 
 ## Acknowledgement
   
   * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
   * Nickson Jose, VLSI Engineer, VSD Corp. Pvt. Ltd.
   * Madhav Rao, Professor, IIIT-Bangalore.
-  * Nanditha Rao, Professor, IIIT-Bangalore.
+  * Nanditha Rao, Professor, IIIT-Bangalore.  
+  * Efabless Corporation
+  * Google Skywater Foundry
+  * Open Road
 
 ## Contact Information
 
